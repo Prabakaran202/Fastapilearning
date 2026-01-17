@@ -34,7 +34,7 @@ MockDB=[{
 }]
 @app.post("/addstuden/")
 async def newstn(new:student):
-    MockDB.append(new.dict())
+    MockDB.append(new.model_dump())
     return {'msg':"new stutend add succ","newstutand":new}
 @app.get("/student/{studen_id}")
 async def list_of_stn(studen_id:int):
