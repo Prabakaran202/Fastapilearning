@@ -1,6 +1,6 @@
 
 from schemas.inventory import Product,addPro
-from fastapi import APIRouter,HTTPException
+from fastapi import APIRouter,HTTPException,Path,Query
 
 DB = [
     {"id": 1, "name": "Laptop", "price": 50000, "stock": 5, "category": "Electronics"},
@@ -17,3 +17,17 @@ router = APIRouter(prefix="/inventory",tags=["inventory"])
 async def getall():
     return DB
   
+@router.get("/inventory/search/")
+async def minmax_item(min_price: int = Query(..., gt=0), 
+    max_price: int = Query(..., le=10000)):
+    
+    relt=[]
+
+    for item in DB:
+
+        if item["price"] <=min_price and item["price"] <=max_price:
+            relt.append(item)
+    if not relt:
+        return{"mag":"your items not found"}
+    
+    return {"msg":"your items is","data":relt}
