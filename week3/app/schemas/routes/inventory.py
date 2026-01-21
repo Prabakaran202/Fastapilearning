@@ -1,5 +1,5 @@
 from fastapi import APIRouter,HTTPException,Path,Query
-from schemas.inventory import addPro
+from schemas.inventory import addPro,Product
 
 
 DB = [
@@ -45,6 +45,7 @@ async def stockof(item:int = 0):
     return {"msg":"your items is","data":relt}
 
 @router.post("/add")
-async def addnew(new:addPro):
+async def addnew(new:Product):
+    DB.append(new.model_dump())
     return {"msg":"new user add succeful","data":new}
    
