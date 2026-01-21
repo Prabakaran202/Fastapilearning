@@ -16,3 +16,17 @@ POST /inventory/add: புதுப் பொருளைச் சேர்க
 Main (App/main.py):
 
 இந்த inventory ரூட்டரை மெயின் ஆப்ல include_router பண்ணனும்.
+
+
+
+HTML input
+   ↓
+JavaScript value edukkum
+   ↓
+API call (fetch)
+   ↓
+Backend process pannum
+   ↓
+Response thirumba JS
+   ↓
+HTML-la display
