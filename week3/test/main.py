@@ -19,8 +19,7 @@ db=[{"name":"nadaipayanam","aurthor":"praba","price":200},{"name":"unakenna","au
 @app.post("/list/")
 
 def new(add:bookstor):
-    db.append(db.model_dump())  
-
+    db.append(add.model_dump())  
     return{"msg":"hello wait naa msg panarathu"}
 
 
