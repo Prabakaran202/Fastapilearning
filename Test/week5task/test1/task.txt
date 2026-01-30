@@ -1,0 +1,7 @@
+
+Task 1Student Grading SystemPath Parameter & Validation (ge, le)
+
+
+
+
+ LogicTask 1: Student Grading System (Path Validation)ஒரு மாணவனின் மார்க்கை (score) வாங்க வேண்டும்.Path: /check-grade/{score}Rule: score என்பது 0-க்கு மேல், 100-க்கு கீழ் இருக்க வேண்டும் (Path பயன்படுத்தி வேலிடேட் செய்யவும்).Logic: 90-க்கு மேல் இருந்தால் "Grade A", 50-90 வரை "Grade B", மற்றவை "Fail" என ரிட்டன் செய்ய வேண்டும்.
