@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Connection</title>
+</head>
+<body>
+    <h1>API Data Loading...</h1>
+    
+    <div id="data-container">
+        <input type="text" id="name-tag" readonly>
+        <input type="text" id="role-tag" readonly>
+    </div>
+
+    <script>
+        // API-ah call panna fetch use panrom
+        async function loadAPIData() {
+            try {
+                // Unga API URL-ah inga kudukkanum
+                const response = await fetch('http://127.0.0.1:8000/user');
+                const data = await response.json();
+
+                // HTML elements-la data-va set panrom
+                document.getElementById('name-tag').innerText = "Name: " + data.user_name;
+                document.getElementById('role-tag').innerText = "Role: " + data.role;
+            } catch (error) {
+                console.error('API-la error irukku:', error);
+            }
+        }
+
+        // Page load aagum podhu function call aagum
+        loadAPIData();
+    </script>
+</body>
+</html>
